@@ -34,9 +34,9 @@ func (p *Parser) Parse() Document {
 			return d
 		default:
 			log.Fatalf(
-				"unexpected token at line %d column %d: must be object or array",
+				"unexpected lexer at line %d column %d: must be object or array",
 				t.Line,
-				t.Pos,
+				t.Col,
 			)
 		}
 	}

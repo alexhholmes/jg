@@ -26,12 +26,12 @@ func CreateObject(l *lexer.Lexer) *object {
 	for l.Token().Type != lexer.RBRACE {
 		l.Next()
 		if l.Token().Type == lexer.EOF {
-			log.Fatalf("unexpected EOF at line %d column %d", l.Token().Line, l.Token().Pos)
+			log.Fatalf("unexpected EOF at line %d column %d", l.Token().Line, l.Token().Col)
 		} else if l.Token().Type == lexer.STRING {
 			_ = l.Token().Literal // TODO
 			l.Next()
 			if l.Token().Type != lexer.COLON {
-				log.Fatalf("unexpected token at line %d column %d: expected colon", l.Token().Line, l.Token().Pos)
+				log.Fatalf("unexpected lexer at line %d column %d: expected colon", l.Token().Line, l.Token().Col)
 			}
 			l.Next()
 		}

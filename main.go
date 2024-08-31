@@ -13,5 +13,5 @@ func main() {
 	}`)
 
 	parse := parser.NewParser(input)
-	_ := parse.Parse()
+	_ = parse.Parse()
 }
